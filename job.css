@@ -1,0 +1,53 @@
+/* Basic styling for layout */
+        .job-section {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            background-color: #f9f9f9;
+            font-family: Arial, sans-serif;
+        }
+
+        .job-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        /* Default image for desktop view */
+        .job-image img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .job-content {
+            flex: 2;
+            padding-left: 20px;
+        }
+
+        .job-content h2 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .job-content p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+            text-align: justify;
+         }
+
+        /* Mobile view adjustments */
+        @media (max-width: 768px) {
+            .job-section {
+                flex-direction: column;                
+                text-align: center;
+            }
+
+            .job-content {
+                padding-left: 0;
+            }
+              /* Change to mobile-specific image */
+            .job-image img {
+                content: url("https://img1.wsimg.com/isteam/ip/6daf5d04-0e97-4331-9056-8876550fe90c/job.png/:/rs=w:1209,h:545"); /* Replace with the mobile image URL */
+            }
+        }

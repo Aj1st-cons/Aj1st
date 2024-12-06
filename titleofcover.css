@@ -1,0 +1,62 @@
+body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .title-area {
+            text-align: center;
+            padding: 5px 0;
+        }
+        .title-area h1 {
+            font-size: 48px;
+            font-weight: bold;
+            margin: 0;
+            color: white;
+            display: inline-block; /* Ensures proper alignment */
+        }
+        .title-area .aj .a {
+            font-size: 48px;
+            font-style: italic;
+            font-weight: bold;
+            font-family: 'DM Serif Display', serif;
+        }
+        .title-area .aj .j {
+            font-size: 40px; 
+            font-weight: bold;           
+            font-family: 'philosopher', serif;
+            vertical-align: middle;          
+            margin-left: -5px        }
+        .title-area .highlight {
+            background: linear-gradient(45deg, #ffd700, #ffcc00, #ffa500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: glow 1.5s infinite alternate;
+            display: inline-block;
+        }
+        .title-area .highlight .number {
+            font-style: italic;
+            font-family: 'DM Serif Display', serif;
+            font-size: 3em;
+            margin-left: -2px;
+         }
+        .title-area sup {
+            font-size: 1.25em;
+            font-weight: bold; 
+            vertical-align: 0.75em;                              
+            margin-left: 5px                    
+         }
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 2px #ffd700, 0 0 5px #ffcc00, 0 0 8px #ffa500;
+            }
+            to {
+                text-shadow: 0 0 15px #ffd700, 0 0 30px #ffcc00, 0 0 40px #ffa500;
+            }          
+         }
+             .title-area .consultants {
+            font-size: 1.75em;            
+            margin-left: 5px;
+            font-style: italic;
+            font-weight: bold;  
+            font-family: 'yatra one', serif;          
+            }
+         }

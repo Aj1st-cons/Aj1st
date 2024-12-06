@@ -1,0 +1,73 @@
+/* Reset margins and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#cover {
+    position: relative;
+    width: 100vw;
+    overflow: hidden;
+    text-align: center;
+}
+
+/* Desktop Image - Hidden on Mobile */
+#cover .desktop-image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Mobile Image - Hidden on Desktop */
+#cover .mobile-image {
+    display: none;
+    width: 100%;
+    height: auto;
+}
+
+/* Text Overlay */
+#cover .overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    /* Dark background for readability */
+    padding: 20px;
+    width: 90%;
+    max-width: 800px;
+}
+
+#cover .overlay h1 {
+    font-size: 24;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    margin-bottom: 10px;
+}
+
+#cover .overlay p {
+    font-size: 16;
+    line-height: 1.4;
+    font-family: Arial, sans-serif;
+    text-align: justify;
+    text-align-last: center;
+}
+
+/* Media Query for Mobile - Show Mobile Image, Hide Desktop Image */
+@media (max-width: 768px) {
+    #cover .desktop-image {
+        display: none;
+    }
+    #cover .mobile-image {
+        display: block;
+    }
+    #cover .overlay h1 {
+        font-size: 48;
+    }
+    #cover .overlay p {
+        font-size: 36;
+        font-family: Arial, sans-serif;
+    }
+}

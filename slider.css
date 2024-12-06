@@ -1,0 +1,82 @@
+/* slider.css */
+
+/* Basic styling for the Slider section */
+#Slider {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f5;
+    padding: 20px 0;
+}
+
+/* Slider container styling */
+#Slider .slider-container {
+    width: 90%;
+    overflow: hidden;
+    position: relative;
+    max-width: 1200px;
+    margin-top: -30px;
+}
+
+/* Track styling */
+#Slider .slider-track {
+    display: flex;
+    transition: transform 0.5s ease;
+    will-change: transform;
+    gap: 0; /* Ensure no unintentional gaps */
+}
+
+/* Card styling */
+#Slider .slider-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex: 0 0 300px; /* Default card width */
+    margin: 0; /* Avoid misalignment */
+}
+
+#Slider .slider-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Text details under the image */
+#Slider .card-title {
+    font-size: 1em;
+    font-weight: bold;
+    margin: 8px 0 4px;
+}
+
+#Slider .card-desc {
+    font-size: 0.9em;
+    color: #555;
+}
+
+/* Reduced image size for mobile (0.75x) */
+@media (max-width: 767px) {
+    #Slider .slider-card {
+        flex: 0 0 225px; /* 0.75 times the default width (300px * 0.75) */
+    }
+
+    #Slider .slider-card img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Larger image size for desktop (1.5x) */
+@media (min-width: 1024px) {
+    #Slider .slider-card {
+        flex: 0 0 450px; /* 1.5 times the default width (300px * 1.5) */
+    }
+
+    #Slider .slider-card img {
+        width: 100%;
+        height: auto;
+    }
+}

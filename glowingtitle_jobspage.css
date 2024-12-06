@@ -1,0 +1,63 @@
+  #aj1st {
+            position: relative;
+            width:100vw;                  
+            margin-left: -20px;                                                   
+        }
+        .aj1st-title-area {
+            background-color: #101010;
+            text-align: center;
+            padding: 5px 0;
+            margin: 0 auto;
+            box-sizing: border-box;
+        }
+        .aj1st-title-area h1 {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0;
+            color: white;
+            display: inline-block;
+        }
+        .aj1st-title-area .aj1st-aj .aj1st-a {
+            font-size: 35px;
+            font-style: italic;
+            font-family: 'DM Serif Display', serif;
+            margin-left: 20px;
+        }
+        .aj1st-title-area .aj1st-aj .aj1st-j {
+            font-size: 25px;
+            font-family: 'Yatra One', serif;
+            vertical-align: middle;
+            margin-left: -2px;
+        }
+        .aj1st-title-area .aj1st-highlight {
+            background: linear-gradient(45deg, #ffd700, #ffcc00, #ffa500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: aj1st-glow 1.5s infinite alternate;
+            display: inline-block;
+        }
+        .aj1st-title-area .aj1st-highlight .aj1st-number {
+            font-style: italic;
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.5em;
+            margin-left: 0px;
+        }
+        .aj1st-title-area sup {
+            font-size: 0.75em;
+            vertical-align: super;
+            margin-left: 5px;
+        }
+        @keyframes aj1st-glow {
+            from {
+                text-shadow: 0 0 2px #ffd700, 0 0 5px #ffcc00, 0 0 8px #ffa500;
+            }
+            to {
+                text-shadow: 0 0 15px #ffd700, 0 0 30px #ffcc00, 0 0 40px #ffa500;
+            }
+        }
+        .aj1st-title-area .aj1st-consultants {
+            font-size: 1em;
+            margin-left: 5px;
+            font-style: italic;
+            font-family: 'Yatra One', serif;
+        }
