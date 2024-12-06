@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <h2>Don't worry!</h2>
       <p>We help you to arrive, stay and look for jobs! Also, we place you in jobs directly.</p>
       <div class="visit-link">                    
-    <a href="https://aj1st.pages.dev/Visit%20uae.html" 
+    <a href="http://aj1st.com/Visit%20uae.html" 
        style="display: inline-block; padding: 10px 20px; background-color: #009500; color: #fff; border-radius: 20px;">Visit UAE for a Job &gt;</a>                            
       </div>
     </div>
