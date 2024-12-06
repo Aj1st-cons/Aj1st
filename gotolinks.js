@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <li><a href="Post a job.html">Post a Job</a></li>
                 <li><a href="Find a job.html">Find a Job</a></li>
                 <li><a href="About.html">About Us</a></li>
-                <li><a href="http://www.aj1st.com#Contact">Contact Us</a></li>
+                <li><a href="#Contact">Contact Us</a></li>
             </ul>
         `;
         placeholder.replaceWith(linksContainer);
