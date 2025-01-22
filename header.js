@@ -57,7 +57,7 @@ const menuItems = [
     { text: 'Find a Job', href: 'http://aj1st.com/Find a job.html' },
     { text: 'About Us', href: 'http://aj1st.com/About.html' },
     { text: 'Contact Us', href: 'http://aj1st.com#links-container' },
-    { text: 'Vacancies.Aj1st.com', href: 'https://aj1st-com.pages.dev' },
+    { text: 'Vacancies.Aj1st.com', href: 'https://vacancies.aj1st.com' },
 ];
 
 menuItems.forEach(item => {
