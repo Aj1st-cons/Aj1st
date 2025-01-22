@@ -32,7 +32,7 @@
     const footer = document.createElement('footer');
     footer.className = 'unique-footer';
     footer.innerHTML = `
-        <p>Copyright © 2024 Aj1st Consultants<br> All Rights Reserved.</p>
+        <p>Copyright © 2025 Aj1st Consultants<br> All Rights Reserved.</p>
     `;
 
     // Add an image
