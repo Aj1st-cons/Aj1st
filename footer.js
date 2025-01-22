@@ -10,7 +10,7 @@
     contactSection.innerHTML = `
         <h2>Contact Us</h2>
         <p class="unique-contact-address">
-            Al Nadah, Sharjah, United Arab Emirates
+            Dubai, United Arab Emirates
             <span class="unique-location-icon">➤</span>
         </p>
         <p class="unique-contact-email">admin@aj1st.com</p>
