@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vacancies in UAE</title> 
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Yatra+One&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://aj1st.pages.dev/glowingtitle_jobspage.css" rel="stylesheet"> 
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {                             
+            max-width: 800px;
+            margin-top: 40px;
+            padding: 20px;
+        }        
+        headline {
+            padding: 16px;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;            
+        }
+        select {
+            padding: 10px;
+            outline: 2px solid #ff0030;
+            border-radius: 10px;           
+        }
+        .job-card {
+            border: 1px solid #009500;
+            padding: 16px;
+            margin: 16px;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+        .job-card .date {
+            font-size: 0.9em;
+            color: #888;
+        }
+        .job-card .job-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #009500
+        }
+        .job-card .company {
+            font-size: 1em;
+            color: #555;
+        }
+        .job-card .description {
+            margin: 8px 0;
+        }
+        .job-card .more-details {
+            text-align: right;
+            color: #007bff;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 10%;
+            left: 10%;
+            width: 80%;
+            height: 80%;
+            background: #fff;
+            border: 1px solid #009500;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow-y: auto;
+            z-index: 1001;
+        }
+        
+        .popup img{            
+            width: 200px;
+            height: auto;
+            border-radius: 10px;
+            display: block;
+            margin: 0 auto;
+        }
+        .popup .close {
+            position: fixed;
+            top: 5%;
+            right: 12%;
+            font-size: 20px;
+            cursor: pointer;
+            background: #f00;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+        }
+        .popup .content {
+            padding: 16px;
+        }
+        .popup .apply {
+            position: fixed;
+            bottom: 3%;
+            right: 50%;
+            cursor: pointer;
+            background: #009500;
+            color: white;
+            border: none;
+            padding: 10px;      
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .popup .apply.disabled {
+            background: #00950040;
+            cursor: not-allowed;
+        }
+        .share-icon {        
+            position: fixed;
+            color: #fff;
+            font-size: 30px;
+            bottom: 4%;
+            right: 25%;
+            cursor: pointer; 
+            transition: transform 0.2s; 
+       }
+       .share-icon:hover {
+            transform: scale(1.2);
+       }
+       .share-icon:active {
+            transform: scale(1.1);
+       }
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin: 16px;
+        }
+        .pagination button {
+            padding: 8px 16px;
+            margin: 0 4px;
+            border: 1px solid #009500;
+            background-color: #009500;
+            cursor: pointer;
+        }
+        .pagination button.active {
+            background-color: #009500;
+            color: white;
+            border-color: #007bff;
+        }
+        .pagination button[disabled] {
+            background-color: #00950025;
+            cursor: not-allowed;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+        }
+        .contact{
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 50px;
+        }        
+        .footer {
+            background: #000;
+            color: #eeeeee;
+            text-align: center;
+            font-size: 10px;
+            bottom:0;
+            left: 0;
+            position: fixed;
+            width: 100vw;
+        }
+        .footer b {
+            font-size: 12px;
+            color: #fff;
+            margin-top: 10px;
+        }
+        .body-area {
+            padding: 30px;
+        }     
+    </style>
+<link rel="stylesheet" href="https://aj1st.pages.dev/glowingtitle.css">    
+</head>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxx -->
+         <div class="body-area">
+<div id="aj1st">
+<div class="aj1st-title-area">
+<h1>
+<span class="aj1st-aj">
+  <span class="aj1st-a">A</span>
+  <span class="aj1st-j">j</span></span>
+<span class="aj1st-highlight">
+<span class="aj1st-number">1</span><sup>st</sup>
+   </span>
+<span class="aj1st-consultants">Consultants</span>            
+</h1>
+</div>
+</div>  
+         </div> 
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxx -->
+        <div style="padding:10px;">
+        <h1 style="font-size:16px; font-style:italic;">select job category:</h1>
+        <select id="filter" onchange="filterJobs()">
+<option value="all">All Job Categories</option>
+<option value="salesExecutive">Sales Executive</option>
+<option value="salesManager">Sales Manager</option>
+<option value="design">Design</option>
+<option value="frontend">Frontend</option>
+<option value="frontend">Frontend</option>
+<option value="backend">Backend</option>
+<option value="design">Design</option>
+<option value="frontend">Frontend</option>
+<option value="frontend">Frontend</option>
+<option value="backend">Backend</option>
+<option value="design">Design</option>
+<option value="frontend">Frontend</option>
+<option value="frontend">Frontend</option>
+<option value="backend">Backend</option>
+<option value="design">Design</option>
+        </select>
+        </div>
+    
+
+<div id="job-container"></div>
+<div class="pagination" id="pagination"></div>
+
+    <!-- Dimmed Overlay -->
+<div id="overlay" class="overlay" onclick="closePopup()"></div>
+
+    <!-- Popup -->
+    <div id="popup" class="popup">
+    <button class="close" onclick="closePopup()">×</button>
+<div class="content" id="popup-content"></div>
+<button class="apply" id="apply-button" >Apply</button>        
+        <i class="fa-solid fa-share-from-square share-icon" id="share-button" aria-hidden="true"></i>
+    </div>    
+
+<script src="https://vacancies.aj1st.com/jobs5.js"></script>
+
+       <script>
+                                       
+        let currentPage = 1;
+        const jobsPerPage = 50;
+        let filteredJobs = jobs;
+        const appliedJobs = new Set(JSON.parse(localStorage.getItem('appliedJobs')) || []);
+
+        function renderJobs(page = 1) {
+            const container = document.getElementById("job-container");
+            const start = (page - 1) * jobsPerPage;
+            const end = start + jobsPerPage;
+            const paginatedJobs = filteredJobs.slice(start, end);
+
+            container.innerHTML = paginatedJobs.map(job => `
+                <div class="job-card">
+                    <div class="date">Posted on: ${job.date}</div>
+                    <div class="job-title">${job.title}</div>
+                    <div class="company">${job.company}</div>
+                    <div class="description">${job.description}</div>
+                    <div class="more-details" onclick="openPopup(${job.id})">More Details</div>
+                </div>
+            `).join("");
+
+            renderPagination();
+        }
+
+        function renderPagination() {
+            const pagination = document.getElementById("pagination");
+            const totalPages = Math.ceil(filteredJobs.length / jobsPerPage);
+
+            pagination.innerHTML = `
+                <button onclick="changePage(currentPage - 1)" ${currentPage === 1 ? "disabled" : ""}>Previous</button>
+                ${Array.from({ length: totalPages }, (_, i) => `
+                    <button class="${currentPage === i + 1 ? "active" : ""}" onclick="changePage(${i + 1})">${i + 1}</button>
+                `).join("")}
+                <button onclick="changePage(currentPage + 1)" ${currentPage === totalPages ? "disabled" : ""}>Next</button>
+            `;
+        }
+
+        function changePage(page) {
+            currentPage = page;
+            renderJobs(page);
+        }
+
+        function filterJobs() {
+            const category = document.getElementById("filter").value;
+            filteredJobs = category === "all" ? jobs : jobs.filter(job => job.category === category);
+            currentPage = 1;
+            renderJobs(currentPage);
+        }
+
+        function openPopup(jobId) {
+            const job = jobs.find(j => j.id === jobId);
+            document.getElementById("popup-content").innerHTML = job.popupContent;
+            document.getElementById("popup").style.display = "block";
+            document.getElementById("overlay").style.display = "block";
+
+            const applyButton = document.getElementById("apply-button");
+            const shareButton = document.getElementById("share-button");
+
+            // Apply Button
+            if (appliedJobs.has(jobId)) {
+                applyButton.classList.add("disabled");
+                applyButton.textContent = "Already Applied";
+                applyButton.onclick = null;
+            } else {
+                applyButton.classList.remove("disabled");
+                applyButton.textContent = "Apply";
+                applyButton.onclick = () => {
+                    window.open(job.applyLink, "_blank");
+                    appliedJobs.add(jobId);
+                    localStorage.setItem('appliedJobs', JSON.stringify(Array.from(appliedJobs)));
+                    applyButton.classList.add("disabled");
+                    applyButton.textContent = "Already Applied";
+                };
+            }
+
+// Share Button
+shareButton.onclick = () => {
+    const popupContent = document.getElementById("popup-content").innerHTML; // Get the HTML content of the popup
+    const temporaryElement = document.createElement("div");
+    temporaryElement.innerHTML = popupContent;
+
+    // Extract text from HTML
+    const contentText = temporaryElement.textContent || temporaryElement.innerText;
+
+    const shareText = `${contentText}\n\nApply here: ${job.applyLink}`;
+    const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(shareText)}`;
+    window.open(whatsappUrl, "_blank");
+};
+}
+
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+            document.getElementById("overlay").style.display = "none";
+        }
+
+        window.onload = function () {
+            renderJobs(currentPage);
+        };
+    </script>
+<!-- xxxxxxxxxxxxxxxxxxxxxxx -->    
+
+    <!-- Email Link with Icon -->
+    <div class="contact">
+<a href="mailto:admin@aj1st.com" style="text-decoration: none; color: #009500;">
+    <i class="fas fa-envelope"></i> email
+</a>   
+    </div>
+    
+</body>
+<!-- xxxxxxxxxxxxxxxxxxxxxxx -->
+<footer class="footer">
+    <div style="padding: 10px; font-style:italic;">
+  <b style="font-style:normal; font-family: 'DM Serif Display', serif;">Aj <span style="color:#FFDF00; font-style: italic;">1</span><sup style="font-size:8px; color:#FFDF00;"> st</sup></b> ⓒ 2025 <br>
+  All rights reserved</div>
+</footer>  
+</html>
